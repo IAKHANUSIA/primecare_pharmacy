@@ -290,4 +290,157 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // 7. Interactive Location Switcher for About Us Page
+  const aboutLocationsData = {
+    "1": {
+      name: "Primecare Pharmacy - Windermere",
+      shortName: "Windermere",
+      pharmacist: "Sarafaraz Shaikh",
+      proprietor: "Sarafaraz Shaikh",
+      permit: "14786",
+      address: "5594 Windermere Blvd Edmonton, AB T6W 2Z8",
+      phone: "+1 (780) 435-3030",
+      fax: "+1 (780) 435-2930",
+      image: "images/wind-ph-1.jpg",
+      licenseUrl: "docs/pharmacy_license_windermere.pdf"
+    },
+    "2": {
+      name: "Primecare Pharmacy - Leduc",
+      shortName: "Leduc",
+      pharmacist: "Sakibbhai Khanusia",
+      proprietor: "Sakibbhai Khanusia",
+      permit: "14544",
+      address: "3610 Rollyview Rd, Unit 103 Leduc, AB T9E 4V9",
+      phone: "+1 (780) 769-1090",
+      fax: "+1 (780) 435-3031",
+      image: "images/leduc_pharmacy-1.jpg",
+      licenseUrl: "docs/pharmacy_license_leduc.pdf"
+    },
+    "3": {
+      name: "Primecare Pharmacy - St. Albert",
+      shortName: "St. Albert",
+      pharmacist: "Chirag Patel",
+      proprietor: "Chirag Patel",
+      permit: "15544",
+      address: "1115 St. Albert Trail, Unit 670 St. Albert, AB T8N 7X6",
+      phone: "+1 (780) 544-0626",
+      fax: "+1 (778) 654-0039",
+      image: "images/albert-ph-1.jpg",
+      licenseUrl: "docs/pharmacy_license_stalbert.pdf"
+    }
+  };
+
+  window.switchLocation = function (locId, event) {
+    if (event && event.preventDefault) {
+      event.preventDefault();
+    }
+    const locKey = String(locId);
+    const data = aboutLocationsData[locKey];
+    if (!data) return;
+
+    // 1. Update active tab classes
+    document.querySelectorAll('.btn-location-tab').forEach(tab => {
+      if (tab.getAttribute('data-loc') === locKey) {
+        tab.classList.add('active');
+      } else {
+        tab.classList.remove('active');
+      }
+    });
+
+    // 2. Update hero title
+    const heroTitle = document.getElementById('aboutHeroTitle');
+    if (heroTitle) heroTitle.textContent = `About Us - ${data.shortName} Location`;
+
+    // 3. Update intro paragraph strong tag
+    const locPharmacyName = document.getElementById('locPharmacyName');
+    if (locPharmacyName) locPharmacyName.textContent = data.name;
+
+    // 4. Update proprietor card
+    const locPharmacistName = document.getElementById('locPharmacistName');
+    if (locPharmacistName) locPharmacistName.textContent = data.pharmacist;
+
+    const locProprietorTitle = document.getElementById('locProprietorTitle');
+    if (locProprietorTitle) locProprietorTitle.textContent = `Pharmacist & Proprietor - ${data.shortName}`;
+
+    const locPermitNumber = document.getElementById('locPermitNumber');
+    if (locPermitNumber) locPermitNumber.textContent = data.permit;
+
+    const locAddress = document.getElementById('locAddress');
+    if (locAddress) locAddress.textContent = data.address;
+
+    const locPhone = document.getElementById('locPhone');
+    if (locPhone) locPhone.textContent = data.phone;
+
+    const locFax = document.getElementById('locFax');
+    if (locFax) locFax.textContent = data.fax;
+
+    // 5. Update store interior image with smooth fade
+    const locStoreImg = document.getElementById('locStoreImg');
+    if (locStoreImg) {
+      locStoreImg.style.opacity = '0.3';
+      setTimeout(() => {
+        locStoreImg.src = data.image;
+        locStoreImg.style.opacity = '1';
+      }, 150);
+    }
+
+    // 6. Update regulatory disclosure box
+    const regPharmacistName = document.getElementById('regPharmacistName');
+    if (regPharmacistName) regPharmacistName.textContent = data.pharmacist;
+
+    const regPermitNumber = document.getElementById('regPermitNumber');
+    if (regPermitNumber) regPermitNumber.textContent = data.permit;
+
+    const regAddress = document.getElementById('regAddress');
+    if (regAddress) regAddress.textContent = data.address;
+
+    const regLicenseLink = document.getElementById('regLicenseLink');
+    if (regLicenseLink) regLicenseLink.setAttribute('href', data.licenseUrl);
+
+    // 7. Update browser address bar without reload
+    try {
+      const currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set('loc', locKey);
+      window.history.pushState({ loc: locKey }, '', currentUrl.toString());
+    } catch (e) {
+      // Ignore if pushState is restricted
+    }
+  };
+
+  // Attach click listener to location tabs and check URL query on page load
+  const locationTabs = document.querySelectorAll('.btn-location-tab');
+  if (locationTabs.length > 0) {
+    locationTabs.forEach(tab => {
+      tab.addEventListener('click', function (e) {
+        const loc = this.getAttribute('data-loc');
+        if (loc) {
+          switchLocation(loc, e);
+        }
+      });
+    });
+
+    // Check URL parameters on page load (e.g. ?loc=2)
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialLoc = urlParams.get('loc') || urlParams.get('location');
+    if (initialLoc && aboutLocationsData[initialLoc]) {
+      switchLocation(initialLoc);
+    }
+  }
+
+  // Also hook top announcement bar location chips if on About Us page
+  if (document.querySelector('.location-switcher-bar')) {
+    document.querySelectorAll('.edmonton-location-chip').forEach(chip => {
+      chip.addEventListener('click', function (e) {
+        const href = this.getAttribute('href') || '';
+        const match = href.match(/loc=([1-3])/);
+        if (match) {
+          e.preventDefault();
+          switchLocation(match[1], e);
+          const switcher = document.querySelector('.location-switcher-bar');
+          if (switcher) switcher.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
+  }
+
 });

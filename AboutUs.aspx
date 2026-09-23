@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="AboutUs.aspx.vb" Inherits="AboutUsPage" %>
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="AboutUs.aspx.vb" Inherits="AboutUsPage" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -288,7 +288,7 @@
 
         <!-- About Us Hero Banner -->
         <section class="about-hero">
-            <h1>About Us - <%= SelectedLocation.ShortName %> Location</h1>
+            <h1 id="aboutHeroTitle">About Us - <%= SelectedLocation.ShortName %> Location</h1>
         </section>
 
         <!-- Main About Us Content -->
@@ -297,9 +297,9 @@
             <div class="location-switcher-bar" style="margin-bottom: 30px; text-align: center;">
                 <div style="font-size: 13px; font-weight: 800; color: #15803d; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Select Edmonton Location:</div>
                 <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-                    <a href="AboutUs.aspx?loc=1" class="btn-location-tab <%= If(SelectedLocation.Id = 1, "active", "") %>">Windermere</a>
-                    <a href="AboutUs.aspx?loc=2" class="btn-location-tab <%= If(SelectedLocation.Id = 2, "active", "") %>">Leduc</a>
-                    <a href="AboutUs.aspx?loc=3" class="btn-location-tab <%= If(SelectedLocation.Id = 3, "active", "") %>">St. Albert</a>
+                    <a href="AboutUs.aspx?loc=1" class="btn-location-tab <%= If(SelectedLocation.Id = 1, "active", "") %>" data-loc="1">Windermere</a>
+                    <a href="AboutUs.aspx?loc=2" class="btn-location-tab <%= If(SelectedLocation.Id = 2, "active", "") %>" data-loc="2">Leduc</a>
+                    <a href="AboutUs.aspx?loc=3" class="btn-location-tab <%= If(SelectedLocation.Id = 3, "active", "") %>" data-loc="3">St. Albert</a>
                 </div>
             </div>
 
@@ -307,21 +307,20 @@
                 <!-- Left Column -->
                 <div>
                     <p class="about-intro-p">
-                        Primecare Pharmacy is proud to serve our community across Edmonton. We pride ourselves as independently owned pharmacies focusing on patient-centered customer service to promote medication safety and healthcare excellence at our <strong><%= SelectedLocation.Name %></strong> location.
+                        Primecare Pharmacy is proud to serve our community across Edmonton. We pride ourselves as independently owned pharmacies focusing on patient-centered customer service to promote medication safety and healthcare excellence at our <strong id="locPharmacyName"><%= SelectedLocation.Name %></strong> location.
                     </p>
-                <div class="proprietor-card">
-                        <div class="proprietor-name pharmacist-highlight"><%= SelectedLocation.PharmacistName %></div>
-                        <div class="proprietor-title">Pharmacist & Proprietor - <%= SelectedLocation.ShortName %></div>
-                        <div class="permit-number permit-highlight">Practice permit number <%= SelectedLocation.PracticePermitNumber %></div>
-                        <div class="proprietor-address">Address: <%= SelectedLocation.Address %> <%= SelectedLocation.CityStateZip %></div>
-                        <div style="margin-bottom: 14px; font-size: 13px; color: #475569;">Phone: <strong><%= SelectedLocation.Phone %></strong> | Fax: <strong><%= SelectedLocation.Fax %></strong></div>
-<%--                        <a href="<%= SelectedLocation.LicenseFileUrl %>" target="_blank" class="btn-green-pill" style="display:inline-block; text-decoration:none; margin-top:8px;">Pharmacy License</a>--%>
+                    <div class="proprietor-card">
+                        <div id="locPharmacistName" class="proprietor-name pharmacist-highlight"><%= SelectedLocation.PharmacistName %></div>
+                        <div id="locProprietorTitle" class="proprietor-title">Pharmacist & Proprietor - <%= SelectedLocation.ShortName %></div>
+                        <div class="permit-number permit-highlight">Practice permit number <span id="locPermitNumber"><%= SelectedLocation.PracticePermitNumber %></span></div>
+                        <div class="proprietor-address">Address: <span id="locAddress"><%= SelectedLocation.Address %> <%= SelectedLocation.CityStateZip %></span></div>
+                        <div style="margin-bottom: 14px; font-size: 13px; color: #475569;">Phone: <strong id="locPhone"><%= SelectedLocation.Phone %></strong> | Fax: <strong id="locFax"><%= SelectedLocation.Fax %></strong></div>
                     </div>
                 </div>
 
                 <!-- Right Column: Store Interior Photography -->
                 <div>
-                    <img src="images/about_store_interior.jpg" alt="Primecare Pharmacy Store Interior Aisles" class="store-interior-img" />
+                    <img id="locStoreImg" src="<%= If(SelectedLocation.Id = 2, "images/leduc_pharmacy-1.jpg", If(SelectedLocation.Id = 3, "images/albert-ph-1.jpg", "images/wind-ph-1.jpg")) %>" alt="Primecare Pharmacy Store Interior Aisles" class="store-interior-img" style="transition: opacity 0.3s ease;" />
                 </div>
             </div>
 
@@ -357,12 +356,12 @@
             <!-- Alberta College of Pharmacy Regulatory Disclosure Box -->
             <div class="regulatory-disclosure-box">
                 <div class="regulatory-header">
-                    <span class="pharmacist-highlight"><%= SelectedLocation.PharmacistName %></span>, Practice Permit #<span class="permit-highlight"><%= SelectedLocation.PracticePermitNumber %></span>, <%= SelectedLocation.Address %> <%= SelectedLocation.CityStateZip %>
+                    <span id="regPharmacistName" class="pharmacist-highlight"><%= SelectedLocation.PharmacistName %></span>, Practice Permit #<span id="regPermitNumber" class="permit-highlight"><%= SelectedLocation.PracticePermitNumber %></span>, <span id="regAddress"><%= SelectedLocation.Address %> <%= SelectedLocation.CityStateZip %></span>
                 </div>
                 <p>
                     The Licensee is required to provide, on the request of a patient, the name and practice permit number of any regulated member who provides a pharmacy service to the patient; the name and practice permit number of any regulated member who provides a pharmacy service to the patient or who engages in the practice of pharmacy with respect to a patient. <a href="https://abpharmacy.ca" target="_blank" style="color:#0c76c6; text-decoration:underline;">Patient Concerns</a>
                 </p>
-                <a href="<%= SelectedLocation.LicenseFileUrl %>" target="_blank" class="btn-blue-pill" style="display:inline-block; text-decoration:none;">Pharmacy License</a>
+                <a id="regLicenseLink" href="<%= SelectedLocation.LicenseFileUrl %>" target="_blank" class="btn-blue-pill" style="display:inline-block; text-decoration:none;">Pharmacy License</a>
             </div>
         </main>
 

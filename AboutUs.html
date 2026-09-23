@@ -208,7 +208,7 @@
 </head>
 <body>
     <form method="post" action="./AboutUs.html" id="form1">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="bdiF2PZvH6OOgCamOVCs0Xd+Uxo4u9SkqG7xNMzN7Qmt0aHLL/q7+wljUpaxM15SaOroVeD7m/AHh4VLsW144l/o6PERWgWaNZWXLxHEAiE=" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="duTFpRjDpTqDUi1u6FuL7gHF+ywvG1HD/KkMueJN+GgWttorhp2Krn5RNz7PV3q3Ei7vv7J+VBdTYkUBIx5a3bB79FyGMYdV+0+eYG1IvOE=" />
 
 <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="96F51A67" />
 
@@ -284,7 +284,7 @@
 
         <!-- About Us Hero Banner -->
         <section class="about-hero">
-            <h1>About Us - Windermere Location</h1>
+            <h1 id="aboutHeroTitle">About Us - Windermere Location</h1>
         </section>
 
         <!-- Main About Us Content -->
@@ -293,9 +293,9 @@
             <div class="location-switcher-bar" style="margin-bottom: 30px; text-align: center;">
                 <div style="font-size: 13px; font-weight: 800; color: #15803d; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Select Edmonton Location:</div>
                 <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-                    <a href="AboutUs.html?loc=1" class="btn-location-tab active">Windermere</a>
-                    <a href="AboutUs.html?loc=2" class="btn-location-tab ">Leduc</a>
-                    <a href="AboutUs.html?loc=3" class="btn-location-tab ">St. Albert</a>
+                    <a href="AboutUs.html?loc=1" class="btn-location-tab active" data-loc="1">Windermere</a>
+                    <a href="AboutUs.html?loc=2" class="btn-location-tab " data-loc="2">Leduc</a>
+                    <a href="AboutUs.html?loc=3" class="btn-location-tab " data-loc="3">St. Albert</a>
                 </div>
             </div>
 
@@ -303,21 +303,20 @@
                 <!-- Left Column -->
                 <div>
                     <p class="about-intro-p">
-                        Primecare Pharmacy is proud to serve our community across Edmonton. We pride ourselves as independently owned pharmacies focusing on patient-centered customer service to promote medication safety and healthcare excellence at our <strong>Primecare Pharmacy - Windermere</strong> location.
+                        Primecare Pharmacy is proud to serve our community across Edmonton. We pride ourselves as independently owned pharmacies focusing on patient-centered customer service to promote medication safety and healthcare excellence at our <strong id="locPharmacyName">Primecare Pharmacy - Windermere</strong> location.
                     </p>
-                <div class="proprietor-card">
-                        <div class="proprietor-name pharmacist-highlight">Sarafaraz Shaikh</div>
-                        <div class="proprietor-title">Pharmacist & Proprietor - Windermere</div>
-                        <div class="permit-number permit-highlight">Practice permit number 14786</div>
-                        <div class="proprietor-address">Address: 5594 Windermere Blvd Edmonton, AB T6W 2Z8</div>
-                        <div style="margin-bottom: 14px; font-size: 13px; color: #475569;">Phone: <strong>+1 (780) 435-3030</strong> | Fax: <strong>+1 (780) 435-2930</strong></div>
-
+                    <div class="proprietor-card">
+                        <div id="locPharmacistName" class="proprietor-name pharmacist-highlight">Sarafaraz Shaikh</div>
+                        <div id="locProprietorTitle" class="proprietor-title">Pharmacist & Proprietor - Windermere</div>
+                        <div class="permit-number permit-highlight">Practice permit number <span id="locPermitNumber">14786</span></div>
+                        <div class="proprietor-address">Address: <span id="locAddress">5594 Windermere Blvd Edmonton, AB T6W 2Z8</span></div>
+                        <div style="margin-bottom: 14px; font-size: 13px; color: #475569;">Phone: <strong id="locPhone">+1 (780) 435-3030</strong> | Fax: <strong id="locFax">+1 (780) 435-2930</strong></div>
                     </div>
                 </div>
 
                 <!-- Right Column: Store Interior Photography -->
                 <div>
-                    <img src="images/about_store_interior.jpg" alt="Primecare Pharmacy Store Interior Aisles" class="store-interior-img" />
+                    <img id="locStoreImg" src="images/wind-ph-1.jpg" alt="Primecare Pharmacy Store Interior Aisles" class="store-interior-img" style="transition: opacity 0.3s ease;" />
                 </div>
             </div>
 
@@ -353,12 +352,12 @@
             <!-- Alberta College of Pharmacy Regulatory Disclosure Box -->
             <div class="regulatory-disclosure-box">
                 <div class="regulatory-header">
-                    <span class="pharmacist-highlight">Sarafaraz Shaikh</span>, Practice Permit #<span class="permit-highlight">14786</span>, 5594 Windermere Blvd Edmonton, AB T6W 2Z8
+                    <span id="regPharmacistName" class="pharmacist-highlight">Sarafaraz Shaikh</span>, Practice Permit #<span id="regPermitNumber" class="permit-highlight">14786</span>, <span id="regAddress">5594 Windermere Blvd Edmonton, AB T6W 2Z8</span>
                 </div>
                 <p>
                     The Licensee is required to provide, on the request of a patient, the name and practice permit number of any regulated member who provides a pharmacy service to the patient; the name and practice permit number of any regulated member who provides a pharmacy service to the patient or who engages in the practice of pharmacy with respect to a patient. <a href="https://abpharmacy.ca" target="_blank" style="color:#0c76c6; text-decoration:underline;">Patient Concerns</a>
                 </p>
-                <a href="docs/pharmacy_license.html?loc=1" target="_blank" class="btn-blue-pill" style="display:inline-block; text-decoration:none;">Pharmacy License</a>
+                <a id="regLicenseLink" href="docs/pharmacy_license.html?loc=1" target="_blank" class="btn-blue-pill" style="display:inline-block; text-decoration:none;">Pharmacy License</a>
             </div>
         </main>
 
