@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/style.css?v=2.3" />
+    <link rel="stylesheet" href="css/style.css?v=2.4" />
     <link rel="icon" href="images/logo.svg" type="image/svg+xml" />
 
     <style>
@@ -271,15 +271,6 @@
                         <li><a href="NewPrescription.aspx">New Prescription</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-contact-col">
-                    <h3 class="footer-column-title">Primecare Pharmacy</h3>
-                    <ul class="contact-info-list">
-                        <li><span>5594 Windermere Blvd, Edmonton, AB T6W 2Z8</span></li>
-                        <li><span>(780) 435-3030</span></li>
-                    </ul>
-                </div>
-            </div>
             <div class="footer-bottom">
                 <div>&copy; <%= DateTime.Now.Year %> Primecare Pharmacy &amp; Travel Clinic. All Rights Reserved. Regulated by the Alberta College of Pharmacy (ACP).</div>
                 <div style="display:flex; gap:16px; align-items:center;">
@@ -290,6 +281,6 @@
             </div>
         </footer>
     </form>
-    <script src="js/script.js?v=2.3"></script>
+    <script src="js/script.js?v=2.4"></script>
 </body>
 </html>

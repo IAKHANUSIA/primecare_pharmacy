@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/style.css?v=2.3" />
+    <link rel="stylesheet" href="css/style.css?v=2.4" />
     <link rel="icon" href="images/logo.svg" type="image/svg+xml" />
 
     <style>
@@ -325,12 +325,6 @@
                         <li><a href="NewPrescription.aspx">New Prescription</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-contact-col">
-                    <div class="social-links" style="margin-top:0;">
-                        <a href="https://facebook.com" target="_blank" class="social-icon" aria-label="Facebook">f</a>
-                    </div>
-                </div>
             </div>
             <div class="footer-bottom">
                 <div>&copy; <%= DateTime.Now.Year %> Primecare Pharmacy &amp; Travel Clinic. All Rights Reserved. Regulated by the Alberta College of Pharmacy (ACP).</div>
@@ -342,6 +336,6 @@
             </div>
         </footer>
     </form>
-    <script src="js/script.js?v=2.3"></script>
+    <script src="js/script.js?v=2.4"></script>
 </body>
 </html>

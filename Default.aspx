@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- CSS Dependencies -->
-    <link rel="stylesheet" href="css/style.css?v=2.3" />
+    <link rel="stylesheet" href="css/style.css?v=2.4" />
     <link rel="icon" href="images/logo.svg" type="image/svg+xml" />
 </head>
 
@@ -970,18 +970,6 @@
                             <li><a href="services/asthma-copd-management/">Asthma / COPD</a></li>
                         </ul>
                     </div>
-
-                    <!-- Column 3: Social Links & Contact -->
-                    <div class="footer-contact-col">
-                        <h3 class="footer-column-title">Connect With Us</h3>
-                        <p style="font-size:13.5px; color:#94a3b8; line-height:1.5; margin-bottom:12px;">
-                            Questions? Call our primary Windermere clinic at <strong style="color:#ffffff;">(780) 435-3030</strong> or email <strong style="color:#ffffff;">primecarepharmacy5594@gmail.com</strong>.
-                        </p>
-                        <div class="social-links" style="margin-top:0;">
-                            <a href="https://facebook.com" target="_blank" class="social-icon"
-                                aria-label="Facebook">f</a>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="footer-bottom">
@@ -1127,7 +1115,7 @@
 
         </form>
 
-        <script src="js/script.js?v=2.3"></script>
+        <script src="js/script.js?v=2.4"></script>
     </body>
 
     </html>
