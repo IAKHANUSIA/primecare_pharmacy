@@ -277,6 +277,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
     });
-  });
+  // 6. Smart Static Host Routing (e.g. GitHub Pages / Static hosting)
+  if (window.location.hostname.includes('github.io') || window.location.protocol === 'file:') {
+    document.querySelectorAll('a[href]').forEach(a => {
+      let href = a.getAttribute('href');
+      if (href && href.includes('.aspx')) {
+        href = href.replace(/Default\.aspx/gi, 'index.html').replace(/\.aspx/gi, '.html');
+        a.setAttribute('href', href);
+      }
+    });
+  }
 
 });

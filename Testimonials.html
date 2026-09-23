@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>
+	Testimonials Archive - Primecare Pharmacy Windermere Edmonton
+</title><meta name="description" content="Read customer reviews and testimonials for Primecare Pharmacy in Windermere Plaza, Edmonton. Independent pharmacy offering prescriptions, travel health, and home delivery." />
+    
+    <!-- Google Fonts Preconnect & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" /><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" /><link rel="stylesheet" href="css/style.css?v=2.1" /><link rel="icon" href="images/logo.svg" type="image/svg+xml" />
+
+    <style>
+        /* Dedicated Page Styles for Testimonials Archive */
+        .testimonials-hero {
+            position: relative;
+            height: 220px;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('images/testimonials_hero_bg.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .testimonials-hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .testimonials-archive-container {
+            max-width: 1140px;
+            margin: 60px auto 80px auto;
+            padding: 0 24px;
+        }
+
+        .testimonials-3col-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-bottom: 50px;
+        }
+
+        .archive-testimonial-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 32px 24px 24px 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .archive-testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-color: #cbd5e1;
+        }
+
+        .archive-quote-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        .archive-author-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: #0c76c6;
+        }
+
+        .pagination-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 14px;
+            border: 1px solid #cbd5e1;
+            background-color: #ffffff;
+            color: #0c76c6;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .page-btn.active {
+            background-color: #0c76c6;
+            color: #ffffff;
+            border-color: #0c76c6;
+        }
+
+        .page-btn:hover:not(.active) {
+            background-color: #f1f5f9;
+        }
+
+        @media (max-width: 992px) {
+            .testimonials-3col-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .testimonials-3col-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonials-hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="./Testimonials.aspx" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="WvP3M+G7O5eA8WjYdfDiMGZxF6/JVXG+OlvyXL2R2To7AzCF3H4UxR4SpVNcTGWaGtdpdOzrdM7rnk7Nu8O+o61AlQo+zKW9FvPKGNcYIIk=" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="35E74FE0" />
+
+        <!-- Top 3 Edmonton Pharmacy Locations Announcement Bar -->
+        <div class="edmonton-locations-bar">
+            <div class="edmonton-locations-container">
+                <div><strong>3 Edmonton Pharmacy Locations to Serve You:</strong></div>
+                <div class="edmonton-locations-list">
+                    <a href="tel:17804353030" class="edmonton-location-chip">
+                        Windermere: +1 (780) 435-3030
+                    </a>
+                    <a href="tel:17807691090" class="edmonton-location-chip">
+                        Leduc: +1 780-769-1090
+                    </a>
+                    <a href="tel:17805440626" class="edmonton-location-chip">
+                        St. Albert +1 780-544-0626
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header Navigation Bar -->
+        <header class="header-container">
+            <div class="nav-wrapper">
+                <a href="Default.aspx" class="brand-logo">
+                    <img src="images/logo.svg" alt="Primecare Pharmacy - Your health is our focus" />
+                </a>
+
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="Default.aspx">Home</a></li>
+                    <li class="nav-item"><a href="AboutUs.aspx">About Us</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Default.aspx#services" style="font-weight:700; color:var(--teal);">All Services Overview &rarr;</a></li>
+                            <li><a href="Default.aspx#minor-ailments" style="font-weight:700; color:var(--primary);">Minor Ailments Prescribing</a></li>
+                            <li><a href="services/prescriptions/">Prescriptions</a></li>
+                            <li><a href="services/injection-travel-health/">Injection / Travel Health</a></li>
+                            <li><a href="services/diabetes-management/">Diabetes Management</a></li>
+                            <li><a href="services/home-health-care/">Home Health Care</a></li>
+                            <li><a href="services/medication-reviews/">Medication Reviews</a></li>
+                            <li><a href="services/smoking-cessation-support/">Smoking Cessation</a></li>
+                            <li><a href="services/asthma-copd-management/">Asthma / COPD</a></li>
+                            <li><a href="services/heart-health/">Heart Health</a></li>
+                            <li><a href="services/weight-management/">Weight Management</a></li>
+                            <li><a href="services/medication-compounding/">Medication Compounding</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="Default.aspx#minor-ailments">Minor Ailments</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Refill &amp; Transfer Rx</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="RefillPrescription.aspx">Refill Prescription</a></li>
+                            <li><a href="Default.aspx#transfer">Transfer Prescription (3-Step Guide)</a></li>
+                            <li><a href="NewPrescription.aspx">New Prescription</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="Testimonials.aspx" class="active">Testimonials</a></li>
+                    <li class="nav-item"><a href="Default.aspx#locations">Locations</a></li>
+                    <li class="nav-item"><a href="Default.aspx#footer-contact">Contact Us</a></li>
+                </ul>
+
+                <button type="button" class="mobile-toggle" aria-label="Toggle Navigation Menu"
+                    onclick="document.querySelector('.nav-menu').classList.toggle('mobile-active');">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Testimonials Hero Section -->
+        <section class="testimonials-hero">
+            <h1>Testimonials</h1>
+        </section>
+
+        <!-- Main Testimonials 3x3 Grid Section -->
+        <main class="testimonials-archive-container">
+            <div class="testimonials-3col-grid">
+
+                <!-- Card 1 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        Had a very good experience dealing with them. Friendly and knowledgeable
+                    </p>
+                    <div class="archive-author-name">Toufeeq Memon</div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        Friendly, helpful, generous, caring, fast service, great customer service and they also provide home delivery. I never thought that all qualities I will find in one pharmacy.
+                    </p>
+                    <div class="archive-author-name">Safvan Mansuri</div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        Friendly, fast and incredibly helpful. They explained everything to me clearly for travel vaccination! Highly recommended
+                    </p>
+                    <div class="archive-author-name">Rob</div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        This is the best pharmacy! The pharmacy techs are so kind and caring. I feel like my health is an actual priority when I am speaking to them and that is very rare to find nowadays.
+                    </p>
+                    <div class="archive-author-name">A Morris</div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        These guys are very helpful and knowledgeable, with excellent customer service. Keep up the good work guys!
+                    </p>
+                    <div class="archive-author-name">Peter Hansen</div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        Very experienced and knowledgeable staff, all four of us got covid vaccine from them. It was very pleasant experience.
+                    </p>
+                    <div class="archive-author-name">Jagruti Gandhi</div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        Running late for picking up my shipped packages here. The guys here were very friendly and held for me even after their regular work hours. Very awesome!
+                    </p>
+                    <div class="archive-author-name">Simon Xiang</div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        Best pharmacy, very knowledgeable and great customer service!! Always super accommodating especially when I need medications when home sick. Thank you
+                    </p>
+                    <div class="archive-author-name">Kristine O'Driscoll</div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        I would highly recommend this pharmacy. Knowledgeable pharmacists, friendly service, and home delivery available. An added bonus, supporting local business. Try them out!
+                    </p>
+                    <div class="archive-author-name">Abid Mevani</div>
+                </div>
+
+            </div>
+
+            <!-- Pagination Bar matching screenshot -->
+            <div class="pagination-container">
+                <a href="Testimonials.aspx" class="page-btn active">1</a>
+                <a href="javascript:void(0);" onclick="alert('Viewing Page 2 of verified reviews.');" class="page-btn">2</a>
+                <a href="javascript:void(0);" onclick="alert('Loading older testimonials archive...');" class="page-btn">Older posts &rarr;</a>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer id="footer-contact" class="footer">
+            <div class="footer-container">
+                <!-- Column 1: Brand & Slogan -->
+                <div class="footer-brand-col">
+                    <div class="footer-logo">
+                        <img src="images/logo.svg" alt="Primecare Pharmacy" />
+                    </div>
+                    <p class="footer-about-text">
+                        Independently owned pharmacy serving Windermere & Edmonton with medication safety, prescriptions, and healthcare excellence.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links Grid -->
+                <div class="footer-links-col">
+                    <h3 class="footer-column-title">Quick Links</h3>
+                    <ul class="quick-links-grid">
+                        <li><a href="Default.aspx">Home</a></li>
+                        <li><a href="Testimonials.aspx">Testimonials</a></li>
+                        <li><a href="#footer-contact">Contact Us</a></li>
+                        <li><a href="AboutUs.aspx">Meet the Pharmacist</a></li>
+                        <li><a href="services/asthma-copd-management/">Asthma/COPD Management</a></li>
+                        <li><a href="services/diabetes-management/">Diabetes Management</a></li>
+                        <li><a href="services/heart-health/">Heart Health</a></li>
+                        <li><a href="services/home-health-care/">Home Health Care</a></li>
+                        <li><a href="services/injection-travel-health/">Injection / Travel Health</a></li>
+                        <li><a href="services/medication-compounding/">Medication Compounding</a></li>
+                        <li><a href="services/medication-reviews/">Medication Reviews</a></li>
+                        <li><a href="services/prescriptions/">Prescriptions</a></li>
+                        <li><a href="services/smoking-cessation-support/">Smoking Cessation Support</a></li>
+                        <li><a href="services/weight-management/">Weight Management</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Details -->
+                <div class="footer-contact-col">
+                    <h3 class="footer-column-title">Primecare Pharmacy</h3>
+                    <ul class="contact-info-list">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>5594 Windermere Blvd, Edmonton, AB T6W 2Z8</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <span>(780) 435-3030</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><path d="M18 8H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2z"></path><path d="M6 8V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4"></path><line x1="6" y1="12" x2="18" y2="12"></line><line x1="6" y1="15" x2="14" y2="15"></line></svg>
+                            <span>(780) 435-2830</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <span>primecarepharmacy5594@gmail.com</span>
+                        </li>
+                    </ul>
+
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" class="social-icon" aria-label="Facebook">f</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Primecare Pharmacy &amp; Travel Clinic. All Rights Reserved. Regulated by the Alberta College of Pharmacy (ACP).</div>
+                <div style="display:flex; gap:16px; align-items:center;">
+                    <a href="Default.aspx">Home</a>
+                    <a href="Default.aspx#locations">Locations</a>
+                    <a href="AdminLogin.aspx">Staff Portal</a>
+                    <span class="social-icon" style="width:28px; height:28px; font-size:14px; cursor:pointer;" onclick="window.scrollTo({top:0, behavior:'smooth'});">↑</span>
+                </div>
+            </div>
+        </footer>
+
+    </form>
+
+    <script src="js/script.js?v=2.1"></script>
+</body>
+</html>
