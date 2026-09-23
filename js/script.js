@@ -277,6 +277,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
     });
+  });
+
   // 6. Smart Static Host Routing (e.g. GitHub Pages / Static hosting)
   if (window.location.hostname.includes('github.io') || window.location.protocol === 'file:') {
     document.querySelectorAll('a[href]').forEach(a => {
