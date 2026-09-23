@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Testimonials.aspx.vb" Inherits="TestimonialsPage" %>
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Testimonials.aspx.vb" Inherits="TestimonialsPage" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/style.css?v=2.1" />
+    <link rel="stylesheet" href="css/style.css?v=2.3" />
     <link rel="icon" href="images/logo.svg" type="image/svg+xml" />
 
     <style>
@@ -194,7 +194,7 @@
                 </ul>
 
                 <button type="button" class="mobile-toggle" aria-label="Toggle Navigation Menu"
-                    onclick="document.querySelector('.nav-menu').classList.toggle('mobile-active');">
+                    onclick="toggleMobileMenu(event);">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -211,7 +211,8 @@
 
         <!-- Main Testimonials 3x3 Grid Section -->
         <main class="testimonials-archive-container">
-            <div class="testimonials-3col-grid">
+            <!-- Page 1 Reviews (Cards 1 to 9) -->
+            <div id="testimonialsPage1" class="testimonials-3col-grid">
 
                 <!-- Card 1 -->
                 <div class="archive-testimonial-card">
@@ -287,11 +288,88 @@
 
             </div>
 
-            <!-- Pagination Bar matching screenshot -->
+            <!-- Page 2 Reviews (Cards 10 to 18) -->
+            <div id="testimonialsPage2" class="testimonials-3col-grid" style="display: none;">
+
+                <!-- Card 10 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        Best experience I've had at a pharmacy in Edmonton. Pharmacists took time to assess my minor ailment and prescribe medication right away without waiting hours at a walk-in clinic.
+                    </p>
+                    <div class="archive-author-name">Jason Miller</div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        Transferred all my family prescriptions here. The blister packaging service has made organizing my father's medications so simple and stress-free.
+                    </p>
+                    <div class="archive-author-name">Elena Rostova</div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        Amazing care and attention to detail. Prompt prescription refills and helpful advice on managing my diabetes. Truly patient-focused healthcare.
+                    </p>
+                    <div class="archive-author-name">Robert T.</div>
+                </div>
+
+                <!-- Card 13 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        I've been using Primecare Pharmacy since they opened. The pharmacists are always approachable, professional, and genuinely care about your health.
+                    </p>
+                    <div class="archive-author-name">Fatima Al-Mansoor</div>
+                </div>
+
+                <!-- Card 14 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        Fast and easy injection appointment. The pharmacist was gentle, explained everything clearly, and had me on my way in minutes. 5 stars!
+                    </p>
+                    <div class="archive-author-name">Kevin O'Connor</div>
+                </div>
+
+                <!-- Card 15 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        Convenient location, spotless clean pharmacy, and exceptionally friendly staff. Their free city-wide delivery is a lifesaver during winter.
+                    </p>
+                    <div class="archive-author-name">Gurpreet Singh</div>
+                </div>
+
+                <!-- Card 16 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        Sakib and the team go above and beyond for every patient. They caught a medication interaction that my clinic missed. Trust them completely.
+                    </p>
+                    <div class="archive-author-name">Linda M.</div>
+                </div>
+
+                <!-- Card 17 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        The smoking cessation counseling was instrumental in helping me quit for good. Thank you to the wonderful pharmacy team for your support!
+                    </p>
+                    <div class="archive-author-name">Derek Watson</div>
+                </div>
+
+                <!-- Card 18 -->
+                <div class="archive-testimonial-card">
+                    <p class="archive-quote-text">
+                        Professional compounding service. They prepared a customized topical cream prescribed by my dermatologist quickly and at a very fair price.
+                    </p>
+                    <div class="archive-author-name">Stephanie Dubois</div>
+                </div>
+
+            </div>
+
+            <!-- Interactive Pagination Bar -->
             <div class="pagination-container">
-                <a href="Testimonials.aspx" class="page-btn active">1</a>
-                <a href="javascript:void(0);" onclick="alert('Viewing Page 2 of verified reviews.');" class="page-btn">2</a>
-                <a href="javascript:void(0);" onclick="alert('Loading older testimonials archive...');" class="page-btn">Older posts &rarr;</a>
+                <button type="button" id="btnPage1" class="page-btn active" onclick="switchTestimonialPage(1);">1</button>
+                <button type="button" id="btnPage2" class="page-btn" onclick="switchTestimonialPage(2);">2</button>
+                <button type="button" id="btnNextPage" class="page-btn" onclick="switchTestimonialPage(2);">Next page &rarr;</button>
             </div>
         </main>
 
@@ -370,6 +448,6 @@
 
     </form>
 
-    <script src="js/script.js?v=2.1"></script>
+    <script src="js/script.js?v=2.3"></script>
 </body>
 </html>

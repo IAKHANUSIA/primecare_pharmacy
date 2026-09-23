@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="DiabetesManagement.aspx.vb" Inherits="DiabetesManagementPage" %>
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="DiabetesManagement.aspx.vb" Inherits="DiabetesManagementPage" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/style.css?v=2.1" />
+    <link rel="stylesheet" href="css/style.css?v=2.3" />
     <link rel="icon" href="images/logo.svg" type="image/svg+xml" />
 </head>
 
@@ -355,6 +355,6 @@
 
     </form>
 
-    <script src="js/script.js?v=2.1"></script>
+    <script src="js/script.js?v=2.3"></script>
 </body>
 </html>

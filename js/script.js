@@ -165,12 +165,24 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // Mobile Toggle button
-    if (mobileToggle) {
-      mobileToggle.addEventListener('click', function (e) {
+    // Mobile Toggle button controller
+    window.toggleMobileMenu = function (e) {
+      if (e) {
+        e.preventDefault();
         e.stopPropagation();
-        navMenu.classList.toggle('mobile-active');
-      });
+      }
+      const nav = document.querySelector('.nav-menu');
+      const toggle = document.querySelector('.mobile-toggle');
+      if (nav) {
+        const isOpen = nav.classList.toggle('mobile-active');
+        if (toggle) {
+          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+      }
+    };
+
+    if (mobileToggle) {
+      mobileToggle.onclick = window.toggleMobileMenu;
     }
 
     // Close mobile menu on resize to desktop
@@ -441,6 +453,54 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     });
+  }
+
+  // 8. Testimonials Interactive Pagination
+  window.switchTestimonialPage = function (pageNum) {
+    const p1 = document.getElementById('testimonialsPage1');
+    const p2 = document.getElementById('testimonialsPage2');
+    const b1 = document.getElementById('btnPage1');
+    const b2 = document.getElementById('btnPage2');
+    const bNext = document.getElementById('btnNextPage');
+    if (!p1 || !p2) return;
+
+    const page = Number(pageNum) || 1;
+    if (page === 2) {
+      p1.style.display = 'none';
+      p2.style.display = 'grid';
+      if (b1) b1.classList.remove('active');
+      if (b2) b2.classList.add('active');
+      if (bNext) {
+        bNext.innerHTML = '&larr; Previous page';
+        bNext.onclick = function () { switchTestimonialPage(1); };
+      }
+    } else {
+      p1.style.display = 'grid';
+      p2.style.display = 'none';
+      if (b1) b1.classList.add('active');
+      if (b2) b2.classList.remove('active');
+      if (bNext) {
+        bNext.innerHTML = 'Next page &rarr;';
+        bNext.onclick = function () { switchTestimonialPage(2); };
+      }
+    }
+
+    const container = document.querySelector('.testimonials-archive-container');
+    if (container) {
+      container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    try {
+      const currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set('page', String(page));
+      window.history.pushState({ page: page }, '', currentUrl.toString());
+    } catch (e) {}
+  };
+
+  // Check URL query parameters for testimonials page on load
+  const testimonialsParams = new URLSearchParams(window.location.search);
+  if (testimonialsParams.get('page') === '2') {
+    switchTestimonialPage(2);
   }
 
 });

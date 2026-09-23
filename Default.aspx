@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="DefaultPage" %>
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="DefaultPage" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- CSS Dependencies -->
-    <link rel="stylesheet" href="css/style.css?v=2.1" />
+    <link rel="stylesheet" href="css/style.css?v=2.3" />
     <link rel="icon" href="images/logo.svg" type="image/svg+xml" />
 </head>
 
@@ -105,7 +105,7 @@
                 </div>
 
                 <button type="button" class="mobile-toggle" aria-label="Toggle Navigation Menu"
-                    onclick="document.querySelector('.nav-menu').classList.toggle('mobile-active');">
+                    onclick="toggleMobileMenu(event);">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -1127,7 +1127,7 @@
 
         </form>
 
-        <script src="js/script.js?v=2.1"></script>
+        <script src="js/script.js?v=2.3"></script>
     </body>
 
     </html>

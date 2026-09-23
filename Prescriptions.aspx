@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Prescriptions.aspx.vb" Inherits="PrescriptionsPage" %>
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Prescriptions.aspx.vb" Inherits="PrescriptionsPage" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/style.css?v=2.1" />
+    <link rel="stylesheet" href="css/style.css?v=2.3" />
     <link rel="icon" href="images/logo.svg" type="image/svg+xml" />
 
     <style>
@@ -386,7 +386,7 @@
 
             <div class="footer-bottom">
                 <div>&copy; <%= DateTime.Now.Year %> Primecare Pharmacy &amp; Travel Clinic. All Rights Reserved. Regulated by the Alberta College of Pharmacy (ACP).</div>
-                <div class="social-icon" style="width:28px; height:28px; font-size:14px; cursor:pointer;" onclick="window.scrollTo({top:0, behavior:'smooth'});">↑</div>
+                <div class="social-icon" style="width:28px; height:28px; font-size:14px; cursor:pointer;" onclick="window.scrollTo({top:0, behavior:'smooth'});">?</div>
             </div>
         </footer>
 
@@ -475,6 +475,6 @@
 
     </form>
 
-    <script src="js/script.js?v=2.1"></script>
+    <script src="js/script.js?v=2.3"></script>
 </body>
 </html>

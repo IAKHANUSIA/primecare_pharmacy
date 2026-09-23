@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="Services_InjectionTravelHealthPage" %>
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="Services_InjectionTravelHealthPage" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- CSS Dependencies -->
-    <link rel="stylesheet" href="../../css/style.css?v=2.1" />
+    <link rel="stylesheet" href="../../css/style.css?v=2.3" />
     <link rel="icon" href="../../images/logo.svg" type="image/svg+xml" />
 </head>
 
@@ -334,6 +334,6 @@
 
     </form>
 
-    <script src="../../js/script.js?v=2.1"></script>
+    <script src="../../js/script.js?v=2.3"></script>
 </body>
 </html>
