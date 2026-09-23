@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 100" width="280" height="100">
+  <g transform="translate(0, 0)">
+    <!-- Blue Circle with P -->
+    <circle cx="82" cy="21" r="13" fill="#005bb7"/>
+    <text x="82" y="27" font-family="'Arial Black', Arial, sans-serif" font-weight="900" font-size="16" fill="#ffffff" text-anchor="middle">P</text>
+    
+    <!-- rimecare in dark blue -->
+    <text x="96" y="29" font-family="'Arial Black', Arial, sans-serif" font-weight="900" font-size="22" fill="#003e7e" letter-spacing="-0.5">rimecare</text>
+    
+    <!-- PHARMACY in vibrant rounded green -->
+    <text x="140" y="68" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="42" fill="#38be53" text-anchor="middle" letter-spacing="1">PHARMACY</text>
+    
+    <!-- "Your health is our focus" underneath -->
+    <text x="140" y="90" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="14" fill="#111111" text-anchor="middle">“Your health is our focus”</text>
+  </g>
+</svg>

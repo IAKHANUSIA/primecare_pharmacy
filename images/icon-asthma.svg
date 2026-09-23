@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="lungGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="#f0f9ff"/>
+  <!-- Trachea / Airway -->
+  <path d="M32 12 L32 26 M32 26 L24 33 M32 26 L40 33" fill="none" stroke="#0284c7" stroke-width="3" stroke-linecap="round"/>
+  <!-- Left Lung -->
+  <path d="M22 30 C15 30, 10 38, 12 48 C14 54, 20 54, 24 50 C26 47, 26 36, 22 30 Z" fill="url(#lungGrad)" opacity="0.85"/>
+  <!-- Right Lung -->
+  <path d="M42 30 C49 30, 54 38, 52 48 C50 54, 44 54, 40 50 C38 47, 38 36, 42 30 Z" fill="url(#lungGrad)" opacity="0.85"/>
+  <!-- Sparkle of clear breath -->
+  <circle cx="32" cy="38" r="3" fill="#38bdf8"/>
+</svg>

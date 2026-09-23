@@ -1,0 +1,2147 @@
+/* ==========================================================================
+   Primecare Pharmacy - Ultra-Modern Healthcare Design System
+   Responsive across Mobile (iOS/Android), Tablet, Laptop & Desktop
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Brand Core Colors */
+  --primary: #0284c7;             /* Medical Sky Blue */
+  --primary-hover: #0369a1;
+  --primary-light: #f0f9ff;
+  --primary-glow: rgba(2, 132, 199, 0.25);
+
+  --teal: #0d9488;                /* Healthcare Emerald Teal */
+  --teal-hover: #0f766e;
+  --teal-light: #f0fdf4;
+  --teal-glow: rgba(13, 148, 136, 0.25);
+
+  --dark-navy: #0f172a;           /* Deep Slate 900 */
+  --navy-deep: #090e1a;           /* Obsidian Navy */
+  --navy-surface: #1e293b;        /* Slate 800 */
+
+  --amber: #f59e0b;
+  --red: #ef4444;
+
+  /* Typography Colors */
+  --text-dark: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+
+  /* Backgrounds & Surfaces */
+  --bg-page: #ffffff;
+  --bg-subtle: #f8fafc;
+  --bg-card: #ffffff;
+  --border-subtle: #e2e8f0;
+  --border-hover: #cbd5e1;
+
+  /* Border Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 3px rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.07), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+  --shadow-lg: 0 20px 35px -8px rgba(15, 23, 42, 0.1), 0 8px 12px -4px rgba(15, 23, 42, 0.04);
+  --shadow-hover: 0 20px 40px -10px rgba(13, 148, 136, 0.2);
+
+  /* Fonts & Animations */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --transition-smooth: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ==========================================================================
+   Base & Reset
+   ========================================================================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-body);
+  background-color: var(--bg-page);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+/* ==========================================================================
+   Top Announcement Bar (3 Edmonton Locations)
+   ========================================================================== */
+.edmonton-locations-bar {
+  background-color: var(--dark-navy);
+  color: #f1f5f9;
+  padding: 8px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 1001;
+}
+
+.edmonton-locations-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.edmonton-locations-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: #e2e8f0;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+
+.edmonton-locations-title .pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+  70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.edmonton-locations-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.edmonton-location-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: var(--transition-smooth);
+}
+
+.edmonton-location-chip:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Header & Navigation Bar
+   ========================================================================== */
+.header-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  transition: var(--transition-smooth);
+}
+
+.nav-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  transition: var(--transition-smooth);
+  padding: 2px 0;
+}
+
+.brand-logo:hover {
+  transform: scale(1.02);
+}
+
+.brand-logo img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item a {
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--text-dark);
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: var(--transition-smooth);
+  white-space: nowrap;
+}
+
+.nav-item a:hover {
+  color: var(--teal);
+  background-color: var(--teal-light);
+}
+
+.nav-item a.active {
+  color: var(--teal-hover);
+  background-color: #e6fffa;
+  font-weight: 700;
+}
+
+/* Header CTAs */
+.header-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-header-cta {
+  background: linear-gradient(135deg, var(--teal) 0%, #059669 100%);
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 13.5px !important;
+  padding: 8px 18px !important;
+  border-radius: var(--radius-pill) !important;
+  box-shadow: 0 4px 14px var(--teal-glow);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-smooth);
+}
+
+.btn-header-cta:hover {
+  background: linear-gradient(135deg, #0f766e 0%, #047857 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(13, 148, 136, 0.35);
+  color: #ffffff !important;
+}
+
+/* Dropdown Menus */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  user-select: none;
+}
+
+.dropdown-toggle::after {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  margin-left: 6px;
+  transition: transform 0.2s ease;
+}
+
+.dropdown:hover .dropdown-toggle::after,
+.dropdown.active .dropdown-toggle::after,
+.dropdown.mobile-open .dropdown-toggle::after {
+  transform: rotate(-135deg) translateY(-2px);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  background-color: #ffffff;
+  min-width: 290px;
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(226, 232, 240, 0.9);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  display: none;
+  list-style: none;
+  z-index: 1200;
+  animation: dropdownFadeIn 0.2s ease-out;
+}
+
+/* Invisible hover bridge: prevents hover loss when moving mouse cursor slowly between toggle and menu */
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: transparent;
+}
+
+@keyframes dropdownFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Open on hover, active class (click toggle), or focus-within */
+.dropdown:hover .dropdown-menu,
+.dropdown.active .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  margin-bottom: 2px;
+}
+
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  padding: 9px 14px;
+  font-size: 13.5px;
+  color: var(--text-body);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+}
+
+.dropdown-menu a:hover {
+  background: var(--teal-light);
+  color: var(--teal);
+  padding-left: 18px;
+}
+
+/* Mobile Toggle Hamburger */
+.mobile-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--text-dark);
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.mobile-toggle:hover {
+  background: var(--bg-subtle);
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.mobile-toggle svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+}
+
+/* ==========================================================================
+   Hero Section with Dynamic Slider
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  background-color: var(--dark-navy);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 1.2s ease-in-out, transform 4.5s ease-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Dark Gradient Vignette for clear contrast */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.65) 50%, rgba(15, 23, 42, 0.3) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-overlay-card {
+  position: relative;
+  z-index: 10;
+  max-width: 580px;
+  margin-left: max(5%, calc((100% - 1280px) / 2 + 20px));
+  background: rgba(15, 23, 42, 0.76);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  padding: 36px 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(13, 148, 136, 0.25);
+  border: 1px solid rgba(13, 148, 136, 0.45);
+  color: #34d399;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+.hero-title {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.hero-title span {
+  background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #cbd5e1;
+  margin-bottom: 24px;
+}
+
+.hero-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.hero-trust-badges {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  flex-wrap: wrap;
+}
+
+.trust-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.trust-badge-item svg {
+  color: #34d399;
+  flex-shrink: 0;
+}
+
+.hero-slider-pagination {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-pill);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  background-color: transparent;
+  transition: var(--transition-smooth);
+}
+
+.hero-dot.active {
+  background-color: var(--teal);
+  border-color: var(--teal);
+  width: 28px;
+}
+
+/* ==========================================================================
+   Buttons System
+   ========================================================================== */
+.btn-green-pill {
+  background: linear-gradient(135deg, var(--teal) 0%, #059669 100%);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 10px 26px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px var(--teal-glow);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-green-pill:hover {
+  background: linear-gradient(135deg, #0f766e 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(13, 148, 136, 0.35);
+  color: #ffffff;
+}
+
+.btn-white-pill {
+  background-color: #ffffff;
+  color: var(--text-dark) !important;
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-white-pill:hover {
+  background-color: #f8fafc;
+  color: var(--primary) !important;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.btn-outline-pill {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 9px 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  backdrop-filter: blur(8px);
+  transition: var(--transition-smooth);
+}
+
+.btn-outline-pill:hover {
+  background: #ffffff;
+  color: var(--text-dark) !important;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Services Section ("We are your pharmacy")
+   ========================================================================== */
+.services-section {
+  padding: 60px 20px;
+  background-color: var(--bg-subtle);
+  text-align: center;
+  position: relative;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: var(--teal-light);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 10px;
+}
+
+.section-heading-blue {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--dark-navy);
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.section-desc {
+  max-width: 680px;
+  margin: 0 auto 36px auto;
+  font-size: 15.5px;
+  color: var(--text-muted);
+}
+
+.services-carousel-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.carousel-nav-btn {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  flex-shrink: 0;
+  z-index: 5;
+}
+
+.carousel-nav-btn:hover {
+  background: var(--teal);
+  color: #ffffff;
+  border-color: var(--teal);
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px var(--teal-glow);
+}
+
+.services-grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 12px 6px 20px 6px;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.services-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.service-card {
+  flex: 0 0 175px;
+  min-width: 165px;
+  scroll-snap-align: start;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 22px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--teal);
+}
+
+.service-icon-wrapper {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: var(--teal-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover .service-icon-wrapper {
+  transform: scale(1.1);
+  background: #e6fffa;
+}
+
+.service-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.service-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   Vaccination & Travel Health Banners
+   ========================================================================== */
+.vaccine-banner {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 40%, #0d9488 100%);
+  color: #ffffff;
+  padding: 44px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.vaccine-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 140%;
+  height: 200%;
+  background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.vaccine-banner-content {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.banner-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+
+.vaccine-banner-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.vaccine-banner-desc {
+  font-size: 15.5px;
+  color: #e0f2fe;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+/* Travel Health Callout Banner */
+.travel-health-banner {
+  max-width: 1280px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.travel-health-card {
+  background: linear-gradient(135deg, #f0fdf4 0%, #f0f9ff 100%);
+  border: 1px solid #ccfbf1;
+  border-radius: var(--radius-lg);
+  padding: 40px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  box-shadow: var(--shadow-sm);
+}
+
+.travel-banner-text {
+  max-width: 600px;
+}
+
+.travel-banner-text h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--dark-navy);
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.travel-banner-text p {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.travel-banner-img {
+  max-width: 360px;
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   About Us Section
+   ========================================================================== */
+.about-section {
+  padding: 60px 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-subtitle {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.about-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--dark-navy);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.about-text {
+  font-size: 15.5px;
+  color: var(--text-body);
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+
+.about-highlights-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.about-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.about-highlight-item svg {
+  color: var(--teal);
+  flex-shrink: 0;
+}
+
+.about-image-wrapper {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.about-image-wrapper img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.about-image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   Customer Testimonials Section
+   ========================================================================== */
+.testimonials-section {
+  padding: 60px 20px;
+  background-color: var(--bg-subtle);
+  text-align: center;
+}
+
+.testimonials-grid {
+  max-width: 1100px;
+  margin: 0 auto 36px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.testimonial-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-xs);
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition-smooth);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-hover);
+}
+
+.testimonial-stars {
+  color: #f59e0b;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.testimonial-quote {
+  font-size: 15px;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 20px;
+  font-style: normal;
+}
+
+.testimonial-author-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.testimonial-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--primary) 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.testimonial-author-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.testimonial-author-tag {
+  font-size: 12.5px;
+  color: var(--teal);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   3 Edmonton Pharmacy Locations Section
+   ========================================================================== */
+.edmonton-locations-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.edmonton-locations-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px;
+  width: 100%;
+}
+
+.edmonton-location-card {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 26px 24px;
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.edmonton-location-card:hover {
+  border-color: var(--teal);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.edmonton-location-badge {
+  display: inline-block;
+  background-color: var(--teal-light);
+  color: var(--teal-hover);
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+}
+
+.edmonton-location-name {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--dark-navy);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.edmonton-location-address {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.location-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.location-info-item svg {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.location-info-item .info-text {
+  font-size: 13.5px;
+  color: var(--text-body);
+}
+
+.location-info-item .location-street {
+  font-weight: 700;
+  color: var(--dark-navy);
+}
+
+.location-info-item .location-city {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.location-info-item a.location-phone {
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.location-info-item a.location-phone:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+.location-info-item a.location-email {
+  font-weight: 600;
+  color: var(--teal);
+  word-break: break-all;
+}
+
+.edmonton-location-hours {
+  font-size: 13px;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin-top: 10px;
+  margin-bottom: 14px;
+  line-height: 1.55;
+}
+
+.edmonton-location-hours strong {
+  color: #15803d;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.edmonton-location-hours .hours-value {
+  font-weight: 600;
+  color: #166534;
+}
+
+.edmonton-location-hours .hours-closed {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.location-permit-box {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-subtle);
+  line-height: 1.5;
+}
+
+.pharmacist-highlight,
+.permit-highlight,
+.label-blue,
+.val-blue {
+  color: var(--primary) !important;
+  font-weight: 700 !important;
+}
+
+.edmonton-location-actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.edmonton-location-actions .btn-location-phone {
+  flex: 1;
+  text-align: center;
+  background-color: var(--teal);
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 2px 8px var(--teal-glow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.edmonton-location-actions .btn-location-phone:hover {
+  background-color: var(--teal-hover);
+  color: #ffffff;
+}
+
+.edmonton-location-actions .btn-white-pill {
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+.edmonton-location-actions .btn-green-pill {
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+  background: var(--navy-deep);
+  color: #ffffff;
+  padding: 60px 24px 20px 24px;
+  border-top: 3px solid var(--teal);
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 2fr 1fr;
+  gap: 36px;
+  margin-bottom: 30px;
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.footer-logo img {
+  height: 44px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-about-text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin-bottom: 18px;
+}
+
+.footer-column-title {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 16px;
+  list-style: none;
+}
+
+.quick-links-grid a {
+  font-size: 13.5px;
+  color: #cbd5e1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-smooth);
+}
+
+.quick-links-grid a:hover {
+  color: #38bdf8;
+  transform: translateX(4px);
+}
+
+.quick-links-grid a::before {
+  content: '›';
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--teal);
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 38px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 16px;
+  transition: var(--transition-smooth);
+}
+
+.social-icon:hover {
+  background-color: var(--teal);
+  border-color: var(--teal);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #94a3b8;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-bottom a {
+  color: #cbd5e1;
+  text-decoration: underline;
+}
+
+.footer-bottom a:hover {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Modals & Form Layouts
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal-overlay.active {
+  display: flex;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-box {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  max-width: 580px;
+  width: 100%;
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 32px 36px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: #f1f5f9;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.modal-close-btn:hover {
+  background: #e2e8f0;
+  color: var(--dark-navy);
+}
+
+.modal-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--dark-navy);
+  margin-bottom: 6px;
+}
+
+.modal-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.form-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 16px;
+}
+
+.form-group {
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--dark-navy);
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 14.5px;
+  color: var(--text-dark);
+  background-color: #f8fafc;
+  box-sizing: border-box;
+  transition: var(--transition-smooth);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--teal);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px var(--teal-glow);
+}
+
+textarea.form-control {
+  min-height: 60px;
+  resize: vertical;
+}
+
+/* Floating Action Widgets */
+.floating-widgets {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1500;
+}
+
+.whatsapp-float-btn {
+  width: 54px;
+  height: 54px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  transition: var(--transition-bounce);
+}
+
+.whatsapp-float-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+}
+
+/* ==========================================================================
+   Subpages Global Polish (AboutUs, Rx, Testimonials, Services)
+   ========================================================================== */
+.about-hero, .page-hero, .testimonials-hero, .service-hero-section {
+  position: relative;
+  min-height: 240px;
+  padding: 50px 20px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.about-hero::before, .page-hero::before, .testimonials-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(13, 148, 136, 0.55) 100%);
+  pointer-events: none;
+}
+
+.about-hero h1, .page-hero h1, .testimonials-hero h1, .service-hero-title {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.about-page-container, .form-container, .testimonials-archive-container, .service-detail-section {
+  max-width: 1200px;
+  margin: 50px auto 80px auto;
+  padding: 0 20px;
+}
+
+.btn-location-tab {
+  padding: 9px 22px;
+  border-radius: var(--radius-pill);
+  background-color: var(--bg-subtle);
+  color: var(--text-body);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1.5px solid var(--border-subtle);
+  transition: var(--transition-smooth);
+  display: inline-block;
+}
+
+.btn-location-tab:hover,
+.btn-location-tab.active {
+  background-color: var(--teal);
+  color: #ffffff;
+  border-color: var(--teal);
+  box-shadow: 0 4px 12px var(--teal-glow);
+}
+
+.proprietor-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 26px;
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+}
+
+.services-checklist-box {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  background-color: #ffffff;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 36px;
+}
+
+.checklist-item {
+  font-size: 15px;
+  color: var(--text-dark);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checklist-item::before {
+  content: '✓';
+  color: var(--teal);
+  font-weight: 900;
+  background: var(--teal-light);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Rx Form Cards */
+.rx-form-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+}
+
+.rx-control, .rx-input {
+  width: 100%;
+  padding: 11px 16px;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  color: var(--text-dark);
+  background-color: #f8fafc;
+  box-sizing: border-box;
+  transition: var(--transition-smooth);
+}
+
+.rx-control:focus, .rx-input:focus {
+  outline: none;
+  border-color: var(--teal);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px var(--teal-glow);
+}
+
+.rx-btn-submit, .btn-submit-green {
+  width: 100%;
+  background: linear-gradient(135deg, var(--teal) 0%, #059669 100%);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 16px;
+  padding: 14px 24px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 14px var(--teal-glow);
+}
+
+.rx-btn-submit:hover, .btn-submit-green:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(13, 148, 136, 0.4);
+}
+
+/* ==========================================================================
+   Canadian Pharmacy Specific Facilities:
+   1. Minor Ailments Prescribing
+   2. Easy Prescription Transfer
+   3. Canadian Direct Insurance Billing
+   4. Free Naloxone Kits
+   ========================================================================== */
+
+/* 1. Minor Ailments Section */
+.minor-ailments-section {
+  padding: 65px 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
+  text-align: center;
+}
+
+.minor-ailments-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ailments-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 32px 0 28px 0;
+  text-align: left;
+}
+
+.ailment-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-smooth);
+}
+
+.ailment-card:hover {
+  border-color: var(--teal);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.ailment-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--teal-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal);
+  flex-shrink: 0;
+}
+
+.ailment-info h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark-navy);
+  margin-bottom: 2px;
+}
+
+.ailment-info p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* 2. Prescription Transfer Steps */
+.transfer-steps-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+
+.transfer-steps-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 36px 0;
+}
+
+.step-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.step-number {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--primary) 100%);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px var(--teal-glow);
+}
+
+.step-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--dark-navy);
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* 3. Canadian Insurance Direct Billing Section */
+.insurance-billing-section {
+  padding: 55px 20px;
+  background-color: var(--bg-subtle);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+.insurance-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.insurance-badges-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.insurance-pill-badge {
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-dark);
+  box-shadow: var(--shadow-xs);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-smooth);
+}
+
+.insurance-pill-badge:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.insurance-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--teal);
+}
+
+/* 4. Free Naloxone Banner */
+.naloxone-card {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 22px 28px;
+  background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: var(--shadow-xs);
+}
+
+.naloxone-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+}
+
+.naloxone-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #fee2e2;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.naloxone-info h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #991b1b;
+  margin-bottom: 2px;
+}
+
+.naloxone-info p {
+  font-size: 13.5px;
+  color: #7f1d1d;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 992px) {
+  .ailments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .naloxone-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .naloxone-info {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 580px) {
+  .ailments-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Responsive Breakpoints: Desktop, Laptop, Tablet, Mobile (iPhone/Android)
+   ========================================================================== */
+
+/* Laptop & Medium Screens (< 1200px) */
+@media (max-width: 1200px) {
+  .hero-overlay-card {
+    max-width: 520px;
+    margin-left: 24px;
+    padding: 30px;
+  }
+  .hero-title {
+    font-size: 30px;
+  }
+  .edmonton-locations-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px;
+  }
+}
+
+/* Tablet Screens (< 992px) */
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .about-image-wrapper img {
+    height: 300px;
+  }
+  .edmonton-locations-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .travel-health-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px;
+  }
+  .travel-banner-text {
+    max-width: 100%;
+  }
+  .travel-banner-img {
+    max-width: 100%;
+  }
+}
+
+/* Mobile Screens (< 768px) - iPhone, Android, Foldables */
+@media (max-width: 768px) {
+  .edmonton-locations-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .edmonton-locations-list {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .edmonton-locations-list::-webkit-scrollbar {
+    display: none;
+  }
+  .header-cta-group {
+    display: none;
+  }
+  .hero-section {
+    min-height: auto;
+    padding: 20px 0;
+  }
+  .hero-overlay-card {
+    margin: 20px 16px;
+    width: calc(100% - 32px);
+    max-width: 100%;
+    padding: 26px 20px;
+    border-radius: var(--radius-md);
+  }
+  .hero-title {
+    font-size: 24px;
+  }
+  .hero-actions-row {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-actions-row .btn-green-pill,
+  .hero-actions-row .btn-outline-pill {
+    width: 100%;
+  }
+  .hero-trust-badges {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .services-section {
+    padding: 40px 16px;
+  }
+  .section-heading-blue {
+    font-size: 24px;
+  }
+  .service-card {
+    flex: 0 0 145px;
+    min-width: 140px;
+    padding: 18px 10px;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .edmonton-locations-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .quick-links-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-box {
+    padding: 24px 18px;
+  }
+  .form-grid-2col {
+    grid-template-columns: 1fr;
+  }
+  .rx-form-card {
+    padding: 24px 18px;
+  }
+  .floating-widgets {
+    bottom: 16px;
+    right: 16px;
+  }
+  .whatsapp-float-btn {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Mobile Drawer Menu (When Toggled) */
+.nav-menu.mobile-active {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  padding: 16px 20px 24px 20px;
+  border-bottom: 2px solid var(--teal);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+  max-height: 80vh;
+  overflow-y: auto;
+  align-items: stretch;
+  gap: 6px;
+  z-index: 1050;
+  animation: mobileMenuSlide 0.25s ease-out;
+}
+
+@keyframes mobileMenuSlide {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-menu.mobile-active .nav-item {
+  width: 100%;
+}
+
+.nav-menu.mobile-active .nav-item a {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 15px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-menu.mobile-active .dropdown-menu {
+  position: static;
+  box-shadow: none;
+  border: 1px solid var(--border-subtle);
+  margin-top: 4px;
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  display: none;
+}
+
+.nav-menu.mobile-active .dropdown.mobile-open .dropdown-menu {
+  display: block;
+}
+
+/* Small Mobile Screen (< 420px) - iPhone SE, Small Androids */
+@media (max-width: 420px) {
+  .hero-overlay-card {
+    padding: 20px 16px;
+  }
+  .hero-title {
+    font-size: 22px;
+  }
+  .edmonton-location-actions {
+    flex-direction: column;
+  }
+  .edmonton-location-actions a {
+    width: 100%;
+    text-align: center;
+  }
+}

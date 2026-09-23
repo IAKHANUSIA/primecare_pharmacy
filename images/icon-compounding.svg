@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="mortarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="#f8fafc"/>
+  <!-- Mortar and Pestle -->
+  <!-- Pestle angled -->
+  <path d="M38 12 L44 16 L28 40 L22 36 Z" fill="#64748b" stroke="#334155" stroke-width="1.5" rx="2"/>
+  <!-- Mortar Bowl -->
+  <path d="M12 28 C12 28, 14 50, 32 50 C50 50, 52 28, 52 28 C52 28, 48 26, 32 26 C16 26, 12 28, 12 28 Z" fill="url(#mortarGrad)"/>
+  <!-- Base Stand -->
+  <rect x="22" y="50" width="20" height="4" rx="2" fill="#0f766e"/>
+  <!-- Rx Cross / Sparkle -->
+  <path d="M32 34 L32 44 M27 39 L37 39" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

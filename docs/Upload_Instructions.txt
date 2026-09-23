@@ -1,0 +1,23 @@
+========================================================================
+PRIMECARE PHARMACY - 3 LOCATION PHARMACY LICENSE UPLOAD INSTRUCTIONS
+========================================================================
+
+To display your official Alberta College of Pharmacy (ACP) License letters for your 3 locations:
+
+1. Save your official Pharmacy License PDF files in the `docs` folder as:
+   - Windermere Location (Permit #14786 - Sarafaraz Shaikh):
+     e:\Primecara Leduc\docs\pharmacy_license_windermere.pdf
+
+   - Leduc Location (Permit #14544 - Sakibbhai Khanusia):
+     e:\Primecara Leduc\docs\pharmacy_license_leduc.pdf
+
+   - St. Albert Location (Permit #15544 - Chirag Patel):
+     e:\Primecara Leduc\docs\pharmacy_license_stalbert.pdf
+
+2. Alternatively, open your website license viewer page:
+   e:\Primecara Leduc\docs\pharmacy_license.html?loc=1 (or ?loc=2, ?loc=3)
+   Click "Admin Area: Attach / Upload College Approved Letter" (Passcode: admin),
+   select the tab for the store location, choose your PDF file, and click Upload!
+
+3. Each location's "Pharmacy License" button automatically opens its specific license document.
+========================================================================

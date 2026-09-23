@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Vaccine Bottle -->
+  <rect x="12" y="24" width="16" height="26" rx="2" fill="#ffffff" stroke="#0072bc" stroke-width="2.5"/>
+  <rect x="14" y="19" width="12" height="5" fill="#f7931e"/>
+  <rect x="15" y="30" width="10" height="12" fill="#8cc63f"/>
+  <!-- Syringe -->
+  <g transform="rotate(-45 38 32)">
+    <rect x="30" y="14" width="12" height="28" rx="2" fill="#ffffff" stroke="#0072bc" stroke-width="2.5"/>
+    <rect x="33" y="18" width="6" height="12" fill="#ef4136"/>
+    <!-- Plunger -->
+    <path d="M 36 42 L 36 56 M 30 56 L 42 56" stroke="#0072bc" stroke-width="3" stroke-linecap="round"/>
+    <!-- Needle -->
+    <path d="M 36 14 L 36 2" stroke="#0072bc" stroke-width="2"/>
+  </g>
+</svg>

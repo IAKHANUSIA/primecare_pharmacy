@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="smokeTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="#f0fdf4"/>
+  <!-- Cigarette body -->
+  <rect x="12" y="36" width="30" height="8" rx="2" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+  <rect x="12" y="36" width="8" height="8" rx="2" fill="#f59e0b"/>
+  <!-- Smoke curves -->
+  <path d="M46 38 C50 34, 46 28, 52 24 C56 20, 52 14, 56 10" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 3"/>
+  <!-- Prohibition green check / leaf instead of negative sign for cessation support -->
+  <circle cx="32" cy="32" r="26" fill="none" stroke="url(#smokeTeal)" stroke-width="3"/>
+  <line x1="16" y1="16" x2="48" y2="48" stroke="#ef4444" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Leaf of health -->
+  <path d="M42 16 C36 18, 34 26, 40 30 C46 30, 48 22, 42 16 Z" fill="#10b981"/>
+</svg>

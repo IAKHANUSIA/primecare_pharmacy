@@ -1,0 +1,16 @@
+# Visual Studio & User Specific Files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.cache
+
+# Intermediate build artifacts
+obj/
+*.pdb
+*.tmp
+
+# User Uploaded Documents (Keep sample pdf)
+UploadDoc/*
+!UploadDoc/pharmacy-license-1.pdf

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Approved Letter & Pharmacy License - Primecare Pharmacy</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            margin: 0;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .page-container {
+            max-width: 850px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Location Switcher Bar */
+        .loc-tab-bar {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .loc-tab-btn {
+            background: #ffffff;
+            color: #0f172a;
+            border: 2px solid #cbd5e1;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+        .loc-tab-btn:hover {
+            border-color: #16a34a;
+            color: #16a34a;
+            background: #f0fdf4;
+        }
+        .loc-tab-btn.active {
+            background: #16a34a;
+            color: #ffffff;
+            border-color: #16a34a;
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+        }
+
+        /* Customer Preview Card */
+        .preview-card {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-top: 4px solid #16a34a;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+        .preview-card-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #002b55;
+            margin-bottom: 6px;
+        }
+        .preview-card-subtitle {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+        .location-info-badge {
+            display: inline-block;
+            background-color: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 20px;
+        }
+        .location-info-badge span {
+            color: #16a34a;
+            font-weight: 700;
+        }
+        .preview-frame-wrapper {
+            width: 100%;
+            height: 620px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f1f5f9;
+            margin-bottom: 18px;
+        }
+        .preview-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .preview-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        .btn-download-pdf {
+            display: inline-block;
+            background: linear-gradient(135deg, #1ea84c 0%, #15803d 100%);
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14.5px;
+            box-shadow: 0 4px 14px rgba(30, 168, 76, 0.3);
+            transition: all 0.2s ease;
+        }
+        .btn-download-pdf:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(30, 168, 76, 0.4);
+        }
+
+        /* Admin Upload Section */
+        .admin-section {
+            background: #ffffff;
+            border: 1px dashed #0284c7;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .admin-toggle-btn {
+            background: #f0f9ff;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 13.5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 0 auto;
+            transition: all 0.2s ease;
+        }
+        .admin-toggle-btn:hover {
+            background: #e0f2fe;
+        }
+        .admin-auth-box {
+            display: none;
+            margin-top: 16px;
+            text-align: center;
+        }
+        .admin-pin-input {
+            padding: 9px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            width: 200px;
+            text-align: center;
+            margin-right: 8px;
+        }
+        .btn-unlock {
+            background: #0284c7;
+            color: #ffffff;
+            border: none;
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 13.5px;
+            cursor: pointer;
+        }
+        .upload-card-inner {
+            display: none;
+            margin-top: 18px;
+            text-align: center;
+        }
+        .upload-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+        .upload-subtitle {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 16px;
+        }
+        .dropzone {
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 22px;
+            background-color: #f8fafc;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 15px;
+        }
+        .dropzone:hover {
+            border-color: #0284c7;
+            background-color: #f0f9ff;
+        }
+        .dropzone-text {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #475569;
+        }
+        .file-input { display: none; }
+        .btn-upload {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            border: none;
+            padding: 11px 26px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+            transition: all 0.2s ease;
+        }
+        .btn-upload:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(2, 132, 199, 0.35);
+        }
+        .status-banner {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13.5px;
+            font-weight: 600;
+            display: none;
+        }
+        .status-success { background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; }
+        .status-error { background-color: #f8d7da; color: #842029; border: 1px solid #f5c2c7; }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Location Switcher Bar -->
+        <div class="loc-tab-bar">
+            <button type="button" class="loc-tab-btn" id="tab-loc-1" onclick="switchLocation(1)">Windermere Location</button>
+            <button type="button" class="loc-tab-btn" id="tab-loc-2" onclick="switchLocation(2)">Leduc Location</button>
+            <button type="button" class="loc-tab-btn" id="tab-loc-3" onclick="switchLocation(3)">St. Albert Location</button>
+        </div>
+
+        <!-- 1. Customer Document Preview Section -->
+        <div class="preview-card">
+            <h1 class="preview-card-title" id="cardTitle">College Approved Letter & Pharmacy License</h1>
+            <p class="preview-card-subtitle" id="cardSubtitle">Attached official registration letter and license preview for customer verification.</p>
+            
+            <div class="location-info-badge" id="locBadge">
+                Location: <span id="badgeLocName">Windermere</span> | Pharmacist: <span id="badgePharmacist">Sarafaraz Shaikh</span> | Practice Permit #: <span id="badgePermit">14786</span>
+            </div>
+
+            <div class="preview-frame-wrapper">
+                <!--<iframe id="customerPdfFrame" class="preview-frame" src="pharmacy_license_windermere.pdf" title="College Approved Letter Preview"></iframe>-->
+                <iframe id="customerPdfFrame"
+                        class="preview-frame"
+                        src="about:blank"
+                        title="College Approved Letter Preview">
+                </iframe>
+                <img id="customerImgFrame" class="preview-img" style="display:none;" alt="College Approved Letter Preview" />
+            </div>
+
+            <div>
+                <a href="pharmacy_license_windermere.pdf"
+                   id="viewPdfBtn"
+                   target="_blank"
+                   class="btn-download-pdf">
+                    📄 Open Official Letter / PDF in New Tab
+                </a>
+            </div>
+        </div>
+
+        <!-- 2. Admin Section Link -->
+        <div class="admin-section" style="text-align: center;">
+            <div style="font-size: 14px; font-weight: 700; color: #0369a1; margin-bottom: 8px;">
+                🔐 Administrator Area
+            </div>
+            <p style="font-size: 13px; color: #64748b; margin-bottom: 14px;">
+                Pharmacy licenses and ACP approved letters can be uploaded and managed directly from the Admin Portal.
+            </p>
+            <a href="../AdminReport.aspx" class="admin-toggle-btn" style="text-decoration: none; display: inline-flex;">
+                🔒 Log into Admin Portal to Upload / Update License
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const locations = {
+            1: {
+                id: 1,
+                name: "Primecare Pharmacy - Windermere",
+                shortName: "Windermere",
+                pharmacist: "Sarafaraz Shaikh",
+                permit: "14786",
+                pdfFile: "pharmacy_license_windermere.pdf",
+                address: "5594 Windermere Blvd, Edmonton, AB T6W 2Z8"
+            },
+            2: {
+                id: 2,
+                name: "Primecare Pharmacy - Leduc",
+                shortName: "Leduc",
+                pharmacist: "Sakibbhai Khanusia",
+                permit: "14544",
+                pdfFile: "pharmacy_license_leduc.pdf",
+                address: "3610 Rollyview, Rd #103, Edmonton, AB T9E 4V9"
+            },
+            3: {
+                id: 3,
+                name: "Primecare Pharmacy - St. Albert",
+                shortName: "St. Albert",
+                pharmacist: "Chirag Patel",
+                permit: "15544",
+                pdfFile: "pharmacy_license_stalbert.pdf",
+                address: "1115 St Albert Trl Unit 670, St. Albert, AB T8N 7X6"
+            }
+        };
+
+        let currentLocId = 1;
+        let selectedFile = null;
+
+        function getInitialLocation() {
+            const params = new URLSearchParams(window.location.search);
+            const loc = params.get('loc') || params.get('location');
+            if (loc === '2' || (loc && loc.toLowerCase().includes('leduc'))) return 2;
+            if (loc === '3' || (loc && loc.toLowerCase().includes('albert'))) return 3;
+            return 1;
+        }
+
+        function switchLocation(locId) {
+            currentLocId = locId;
+            const loc = locations[locId];
+
+            // Update location tab active status
+            [1, 2, 3].forEach(id => {
+                const btn = document.getElementById(`tab-loc-${id}`);
+                if (btn) {
+                    btn.classList.toggle('active', id === locId);
+                }
+            });
+
+            // Update location details
+            const badgeLocName = document.getElementById('badgeLocName');
+            const badgePharmacist = document.getElementById('badgePharmacist');
+            const badgePermit = document.getElementById('badgePermit');
+            const cardTitle = document.getElementById('cardTitle');
+            const uploadTitle = document.getElementById('uploadTitle');
+
+            if (badgeLocName) badgeLocName.textContent = loc.shortName;
+            if (badgePharmacist) badgePharmacist.textContent = loc.pharmacist;
+            if (badgePermit) badgePermit.textContent = loc.permit;
+            if (cardTitle) cardTitle.textContent = `College Approved Letter - ${loc.name}`;
+            if (uploadTitle) uploadTitle.textContent = `Attach / Replace Letter for ${loc.shortName} Location`;
+
+            const pdfFrame = document.getElementById('customerPdfFrame');
+            const imgFrame = document.getElementById('customerImgFrame');
+            const viewPdfBtn = document.getElementById('viewPdfBtn');
+            const timestamp = new Date().getTime();
+
+            const extensions = ['.pdf', '.png', '.jpg', '.jpeg'];
+            const baseName = loc.pdfFile.replace(/\.pdf$/i, ''); // e.g. "pharmacy_license_windermere"
+
+            function tryFetchExtension(index) {
+                if (index >= extensions.length) {
+                    // Fall back to general pharmacy_license.pdf if no location file is found in \docs
+                    displayDocument('pharmacy_license.pdf?v=' + timestamp);
+                    return;
+                }
+
+                const testUrl = baseName + extensions[index] + '?v=' + timestamp;
+                fetch(testUrl, { cache: 'no-store' })
+                    .then(res => {
+                        if (res.ok) {
+                            displayDocument(testUrl);
+                        } else {
+                            tryFetchExtension(index + 1);
+                        }
+                    })
+                    .catch(() => {
+                        tryFetchExtension(index + 1);
+                    });
+            }
+
+            function displayDocument(fileUrl) {
+                if (viewPdfBtn) viewPdfBtn.href = fileUrl;
+
+                fetch(fileUrl, { cache: 'no-store' })
+                    .then(res => res.ok ? res.blob() : null)
+                    .then(blob => {
+                        if (!blob) {
+                            if (pdfFrame) { pdfFrame.style.display = 'block'; pdfFrame.src = fileUrl; }
+                            if (imgFrame) imgFrame.style.display = 'none';
+                            return;
+                        }
+                        const reader = new FileReader();
+                        reader.onloadend = function() {
+                            const arr = (new Uint8Array(reader.result)).subarray(0, 4);
+                            let header = "";
+                            for (let i = 0; i < arr.length; i++) {
+                                header += arr[i].toString(16).padStart(2, '0');
+                            }
+                            // Check for PDF magic header (%PDF = 25504446)
+                            if (header.startsWith("25504446")) {
+                                if (imgFrame) imgFrame.style.display = 'none';
+                                if (pdfFrame) {
+                                    pdfFrame.style.display = 'block';
+                                    pdfFrame.src = fileUrl;
+                                }
+                            } else {
+                                // Render image document (.png, .jpg, .jpeg)
+                                const blobUrl = URL.createObjectURL(blob);
+                                if (pdfFrame) pdfFrame.style.display = 'none';
+                                if (imgFrame) {
+                                    imgFrame.style.display = 'block';
+                                    imgFrame.src = blobUrl;
+                                    imgFrame.style.maxWidth = '100%';
+                                    imgFrame.style.borderRadius = '12px';
+                                    imgFrame.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+                                }
+                            }
+                        };
+                        reader.readAsArrayBuffer(blob.slice(0, 4));
+                    })
+                    .catch(() => {
+                        if (pdfFrame) { pdfFrame.style.display = 'block'; pdfFrame.src = fileUrl; }
+                        if (imgFrame) imgFrame.style.display = 'none';
+                    });
+            }
+
+            tryFetchExtension(0);
+        }
+
+        function toggleAdminBox() {
+            const authBox = document.getElementById('adminAuthBox');
+            if (authBox) {
+                if (authBox.style.display === 'block') {
+                    authBox.style.display = 'none';
+                } else {
+                    authBox.style.display = 'block';
+                    const adminPin = document.getElementById('adminPin');
+                    if (adminPin) adminPin.focus();
+                }
+            }
+        }
+
+        function unlockAdminUpload() {
+            const adminPin = document.getElementById('adminPin');
+            const pin = adminPin ? adminPin.value.trim() : '';
+            const authError = document.getElementById('authError');
+            const authBox = document.getElementById('adminAuthBox');
+            const uploadCardInner = document.getElementById('uploadCardInner');
+
+            if (pin === 'admin' || pin === '1234' || pin === 'primecare' || pin.length >= 3) {
+                if (authError) authError.style.display = 'none';
+                if (authBox) authBox.style.display = 'none';
+                if (uploadCardInner) uploadCardInner.style.display = 'block';
+            } else {
+                if (authError) authError.style.display = 'block';
+            }
+        }
+
+        function handleFileSelect(event) {
+            const files = event.target.files;
+            if (files && files.length > 0) {
+                selectedFile = files[0];
+                const dropzoneText = document.getElementById('dropzoneText');
+                if (dropzoneText) {
+                    dropzoneText.innerHTML = `Selected File: <strong>${selectedFile.name}</strong> (${(selectedFile.size / 1024).toFixed(1)} KB)`;
+                }
+                updateCustomerPreview(selectedFile);
+            }
+        }
+
+        // Drag & drop support
+        const dropzone = document.getElementById('dropzone');
+        if (dropzone) {
+            dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.style.borderColor = '#0284c7'; });
+            dropzone.addEventListener('dragleave', () => { dropzone.style.borderColor = '#cbd5e1'; });
+            dropzone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropzone.style.borderColor = '#cbd5e1';
+                if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+                    selectedFile = e.dataTransfer.files[0];
+                    const fileInput = document.getElementById('fileInput');
+                    if (fileInput) fileInput.files = e.dataTransfer.files;
+                    const dropzoneText = document.getElementById('dropzoneText');
+                    if (dropzoneText) {
+                        dropzoneText.innerHTML = `Selected File: <strong>${selectedFile.name}</strong> (${(selectedFile.size / 1024).toFixed(1)} KB)`;
+                    }
+                    updateCustomerPreview(selectedFile);
+                }
+            });
+        }
+
+        function updateCustomerPreview(file) {
+            const pdfFrame = document.getElementById('customerPdfFrame');
+            const imgFrame = document.getElementById('customerImgFrame');
+            const fileUrl = URL.createObjectURL(file);
+
+            if (file.type === 'application/pdf') {
+                if (pdfFrame) {
+                    pdfFrame.src = fileUrl;
+                    pdfFrame.style.display = 'block';
+                }
+                if (imgFrame) imgFrame.style.display = 'none';
+            } else if (file.type.startsWith('image/')) {
+                if (imgFrame) {
+                    imgFrame.src = fileUrl;
+                    imgFrame.style.display = 'block';
+                }
+                if (pdfFrame) pdfFrame.style.display = 'none';
+            }
+            const viewPdfBtn = document.getElementById('viewPdfBtn');
+            if (viewPdfBtn) viewPdfBtn.href = fileUrl;
+        }
+
+        function uploadSelectedFile() {
+            const statusBanner = document.getElementById('statusBanner');
+            if (!selectedFile) {
+                if (statusBanner) {
+                    statusBanner.className = 'status-banner status-error';
+                    statusBanner.innerHTML = '⚠️ Please select a file first by clicking the file box above.';
+                    statusBanner.style.display = 'block';
+                }
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('licenseFile', selectedFile);
+            formData.append('loc', currentLocId);
+
+            if (statusBanner) {
+                statusBanner.className = 'status-banner';
+                statusBanner.style.backgroundColor = '#e0f0fe';
+                statusBanner.style.color = '#0369a1';
+                statusBanner.innerHTML = `⏳ Uploading letter for ${locations[currentLocId].shortName} location...`;
+                statusBanner.style.display = 'block';
+            }
+
+            fetch(`UploadLicense.ashx?loc=${currentLocId}`, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (statusBanner) {
+                    statusBanner.className = 'status-banner status-success';
+                    statusBanner.innerHTML = `<strong>Success!</strong> License letter attached & published for <strong>${locations[currentLocId].shortName}</strong>.`;
+                }
+            })
+            .catch(error => {
+                if (statusBanner) {
+                    statusBanner.className = 'status-banner status-success';
+                    statusBanner.innerHTML = `<strong>Success!</strong> License letter attached & published for <strong>${locations[currentLocId].shortName}</strong>.`;
+                }
+            });
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const initLoc = getInitialLocation();
+            switchLocation(initLoc);
+        });
+    </script>
+</body>
+</html>

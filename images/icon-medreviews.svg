@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Thumbs Up Hand -->
+  <path d="M 14 36 L 22 36 L 22 54 L 14 54 Z" fill="#d1d3d4" stroke="#58595b" stroke-width="2"/>
+  <path d="M 22 38 L 30 38 C 34 38 36 34 35 30 L 33 24 C 32 20 35 16 38 16 C 40 16 41 18 41 20 L 40 28 L 50 28 C 53.5 28 55 30.5 54 34 L 50 48 C 49 52 45 54 41 54 L 22 54 Z" fill="#f8a584" stroke="#58595b" stroke-width="2"/>
+  <!-- 3 Stars -->
+  <polygon points="20,12 22,17 27,17 23,20 25,25 20,22 15,25 17,20 13,17 18,17" fill="#ffc20e"/>
+  <polygon points="34,8 36,13 41,13 37,16 39,21 34,18 29,21 31,16 27,13 32,13" fill="#ffc20e"/>
+  <polygon points="48,12 50,17 55,17 51,20 53,25 48,22 43,25 45,20 41,17 46,17" fill="#ffc20e"/>
+</svg>

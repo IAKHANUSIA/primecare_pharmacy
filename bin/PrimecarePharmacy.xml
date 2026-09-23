@@ -1,0 +1,259 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PrimecarePharmacy
+</name>
+</assembly>
+<members>
+<member name="F:PrimecarePharmacy.AboutUsPage._form1">
+<summary>
+form1 control.
+</summary>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._pnlMessage">
+<summary>
+pnlMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._lblStatusMessage">
+<summary>
+lblStatusMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._txtBookingName">
+<summary>
+txtBookingName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._txtBookingPhone">
+<summary>
+txtBookingPhone control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._txtBookingEmail">
+<summary>
+txtBookingEmail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._ddlServiceType">
+<summary>
+ddlServiceType control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._txtBookingDate">
+<summary>
+txtBookingDate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._txtBookingNotes">
+<summary>
+txtBookingNotes control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._btnSubmitBooking">
+<summary>
+btnSubmitBooking control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._txtRxName">
+<summary>
+txtRxName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._txtRxPhone">
+<summary>
+txtRxPhone control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._txtRxEmail">
+<summary>
+txtRxEmail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._txtRxNumber">
+<summary>
+txtRxNumber control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._txtRxNotes">
+<summary>
+txtRxNotes control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:PrimecarePharmacy.DefaultPage._btnSubmitPrescription">
+<summary>
+btnSubmitPrescription control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="M:PrimecarePharmacy.DefaultPage.btnSubmitBooking_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles Vaccination / Injection Appointment Booking Submission
+ </summary>
+</member>
+<member name="M:PrimecarePharmacy.DefaultPage.btnSubmitPrescription_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles Prescription Refill / Transfer Submission
+ </summary>
+</member>
+<member name="M:PrimecarePharmacy.DefaultPage.SaveBookingLocally(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ Saves form submission locally to App_Data/Bookings_Log.csv as server backup
+ </summary>
+</member>
+<member name="M:PrimecarePharmacy.DefaultPage.SaveBookingToAccessDB(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ Saves form submission to MS Access Database in App_Data/PrimecareBookings.mdb using VB.NET OleDbCommand
+ </summary>
+</member>
+<member name="M:PrimecarePharmacy.DefaultPage.SendToGoogleSheet(System.String)">
+ <summary>
+ Transmits Form JSON Payload to Google Apps Script Web App Endpoint via HTTP POST
+ </summary>
+</member>
+<member name="T:PrimecarePharmacy.PharmacyConfig">
+ <summary>
+ Centralized Configuration Class for Primecare Pharmacy and Travel Clinic.
+ Manages site-wide variables, contact information, and 3 Edmonton Pharmacy locations.
+ Modifying values in this file automatically updates them across all web pages.
+ </summary>
+</member>
+<member name="M:PrimecarePharmacy.PharmacyConfig.GetAllLocations">
+ <summary>
+ Returns all 3 Edmonton Pharmacy Locations
+ </summary>
+</member>
+<member name="M:PrimecarePharmacy.PharmacyConfig.GetLocationById(System.Int32)">
+ <summary>
+ Gets Location by ID (1, 2, or 3)
+ </summary>
+</member>
+<member name="M:PrimecarePharmacy.PharmacyConfig.GetLocationFromQuery(System.String)">
+ <summary>
+ Resolves PharmacyLocation from QueryString parameter (e.g. loc=1, loc=2, loc=3 or location name)
+ </summary>
+</member>
+<member name="P:PrimecarePharmacy.PharmacyConfig.PrimaryPhone">
+ <summary>
+ Gets primary location phone number
+ </summary>
+</member>
+<member name="P:PrimecarePharmacy.PharmacyConfig.PrimaryRawPhone">
+ <summary>
+ Gets primary location raw phone number for tel links
+ </summary>
+</member>
+<member name="T:PrimecarePharmacy.PharmacyConfig.ServiceItem">
+ <summary>
+ Service Item Data Model for site navigation
+ </summary>
+</member>
+<member name="M:PrimecarePharmacy.PharmacyConfig.GetAllServices">
+ <summary>
+ Returns complete list of all 10 services provided across Edmonton locations
+ </summary>
+</member>
+<member name="T:PrimecarePharmacy.BookingDatabase">
+ <summary>
+ Centralized Database and CSV Logging Helper for Booking Data in VB.NET.
+ Handles insertion into MS Access Database (App_Data/PrimecareBookings.mdb) via OleDbCommand
+ and server-side CSV fallback logging (App_Data/Bookings_Log.csv).
+ </summary>
+</member>
+<member name="M:PrimecarePharmacy.BookingDatabase.SaveBooking(System.Web.HttpServerUtility,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ Saves booking data to MS Access Database and CSV log using VB OleDb commands.
+ </summary>
+</member>
+<member name="T:PrimecarePharmacy.UserDatabase">
+ <summary>
+ Centralized User Master Database Helper for MS Access Database (App_Data/PrimecareBookings.mdb).
+ Manages User Authentication, User Creation, and Role Validation.
+ </summary>
+</member>
+<member name="M:PrimecarePharmacy.UserDatabase.ValidateUser(System.Web.HttpServerUtility,System.String,System.String,System.String@,System.String@)">
+ <summary>
+ Validates username and password against Users table in Access DB, with fallback to PharmacyConfig credentials.
+ </summary>
+</member>
+<member name="M:PrimecarePharmacy.UserDatabase.EnsureUsersTable(System.Web.HttpServerUtility)">
+ <summary>
+ Ensures Users table exists in Access Database and contains default admin record.
+ </summary>
+</member>
+<member name="F:PrimecarePharmacy.TestimonialsPage._form1">
+<summary>
+form1 control.
+</summary>
+</member>
+</members>
+</doc>
